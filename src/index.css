@@ -28,52 +28,61 @@
   }
 }
 
-/* Quill Editor Customizations */
+/* Rich Text Editor Styles */
 @layer components {
-  .ql-editor {
-    min-height: 150px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  
-  .ql-editor::before {
-    font-style: normal;
+  [contenteditable="true"]:empty::before {
+    content: attr(data-placeholder);
     color: #9ca3af;
+    font-style: italic;
   }
   
-  .ql-toolbar {
-    border-top: 1px solid #d1d5db;
-    border-left: 1px solid #d1d5db;
-    border-right: 1px solid #d1d5db;
-    border-bottom: none;
-    border-top-left-radius: 0.375rem;
-    border-top-right-radius: 0.375rem;
+  [contenteditable="true"]:focus {
+    outline: none;
   }
   
-  .ql-container {
-    border-left: 1px solid #d1d5db;
-    border-right: 1px solid #d1d5db;
-    border-bottom: 1px solid #d1d5db;
-    border-top: none;
-    border-bottom-left-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
+  [contenteditable="true"] h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
   }
   
-  .ql-toolbar .ql-stroke {
-    stroke: #6b7280;
+  [contenteditable="true"] h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
   }
   
-  .ql-toolbar .ql-fill {
-    fill: #6b7280;
+  [contenteditable="true"] h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
   }
   
-  .ql-toolbar button:hover .ql-stroke,
-  .ql-toolbar button.ql-active .ql-stroke {
-    stroke: #3b82f6;
+  [contenteditable="true"] ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin: 0.5rem 0 0.5rem 1.5rem;
   }
   
-  .ql-toolbar button:hover .ql-fill,
-  .ql-toolbar button.ql-active .ql-fill {
-    fill: #3b82f6;
+  [contenteditable="true"] ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin: 0.5rem 0 0.5rem 1.5rem;
+  }
+  
+  [contenteditable="true"] p {
+    margin: 0.5rem 0;
+  }
+  
+  [contenteditable="true"] strong {
+    font-weight: bold;
+  }
+  
+  [contenteditable="true"] em {
+    font-style: italic;
+  }
+  
+  [contenteditable="true"] u {
+    text-decoration: underline;
   }
 }

@@ -1,8 +1,6 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import { FiUpload, FiX, FiImage, FiPlus, FiTag } from 'react-icons/fi';
+import React, { useState, useCallback, useMemo, useRef } from 'react';
+import { FiUpload, FiX, FiImage, FiPlus, FiTag, FiBold, FiItalic, FiUnderline, FiList, FiLink } from 'react-icons/fi';
 import { toast } from 'react-toastify';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import useStore from '../store';
 
 export default function Compose() {
@@ -17,26 +15,7 @@ export default function Compose() {
   const [isLoading, setIsLoading] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const [showTagSuggestions, setShowTagSuggestions] = useState(false);
-
-  // Quill modules configuration
-  const quillModules = useMemo(() => ({
-    toolbar: [
-      [{ 'header': [1, 2, 3, false] }],
-      ['bold', 'italic', 'underline', 'strike'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      ['blockquote', 'code-block'],
-      ['link'],
-      [{ 'color': [] }, { 'background': [] }],
-      [{ 'align': [] }],
-      ['clean']
-    ],
-  }), []);
-
-  const quillFormats = [
-    'header', 'bold', 'italic', 'underline', 'strike',
-    'list', 'bullet', 'blockquote', 'code-block',
-    'link', 'color', 'background', 'align'
-  ];
+  const editorRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -45,11 +24,36 @@ export default function Compose() {
     });
   };
 
-  const handleDescriptionChange = (content) => {
+  const handleDescriptionChange = (e) => {
     setFormData({
       ...formData,
-      description: content
+      description: e.target.innerHTML
     });
+  };
+
+  const executeCommand = (command, value = null) => {
+    document.execCommand(command, false, value);
+    editorRef.current?.focus();
+  };
+
+  const handleKeyDown = (e) => {
+    // Handle common shortcuts
+    if (e.ctrlKey || e.metaKey) {
+      switch (e.key) {
+        case 'b':
+          e.preventDefault();
+          executeCommand('bold');
+          break;
+        case 'i':
+          e.preventDefault();
+          executeCommand('italic');
+          break;
+        case 'u':
+          e.preventDefault();
+          executeCommand('underline');
+          break;
+      }
+    }
   };
 
   const handleTagSelect = (tag) => {
@@ -154,7 +158,7 @@ export default function Compose() {
       toast.error('Title is required');
       return;
     }
-    if (!formData.description.trim() || formData.description === '<p><br></p>') {
+    if (!formData.description.trim() || formData.description === '<br>' || formData.description === '<div><br></div>') {
       toast.error('Description is required');
       return;
     }
@@ -205,20 +209,80 @@ export default function Compose() {
 
           {/* Description */}
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Description *
             </label>
-            <div className="border border-gray-300 rounded-md focus-within:ring-2 focus-within:ring-primary-500 focus-within:border-primary-500">
-              <ReactQuill
-                theme="snow"
-                value={formData.description}
-                onChange={handleDescriptionChange}
-                modules={quillModules}
-                formats={quillFormats}
-                placeholder="Write your post description..."
-                style={{ minHeight: '200px' }}
-              />
+            
+            {/* Rich Text Toolbar */}
+            <div className="border border-gray-300 rounded-t-md bg-gray-50 px-3 py-2 flex items-center space-x-2">
+              <button
+                type="button"
+                onClick={() => executeCommand('bold')}
+                className="p-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                title="Bold (Ctrl+B)"
+              >
+                <FiBold className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => executeCommand('italic')}
+                className="p-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                title="Italic (Ctrl+I)"
+              >
+                <FiItalic className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => executeCommand('underline')}
+                className="p-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                title="Underline (Ctrl+U)"
+              >
+                <FiUnderline className="w-4 h-4" />
+              </button>
+              <div className="w-px h-4 bg-gray-300"></div>
+              <button
+                type="button"
+                onClick={() => executeCommand('insertUnorderedList')}
+                className="p-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                title="Bullet List"
+              >
+                <FiList className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => executeCommand('insertOrderedList')}
+                className="p-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                title="Numbered List"
+              >
+                <span className="text-sm font-bold">1.</span>
+              </button>
+              <div className="w-px h-4 bg-gray-300"></div>
+              <select
+                onChange={(e) => executeCommand('formatBlock', e.target.value)}
+                className="text-sm border-0 bg-transparent focus:outline-none"
+                title="Heading"
+              >
+                <option value="div">Normal</option>
+                <option value="h1">Heading 1</option>
+                <option value="h2">Heading 2</option>
+                <option value="h3">Heading 3</option>
+              </select>
             </div>
+            
+            {/* Rich Text Editor */}
+            <div
+              ref={editorRef}
+              contentEditable
+              onInput={handleDescriptionChange}
+              onKeyDown={handleKeyDown}
+              className="w-full min-h-[150px] p-3 border border-t-0 border-gray-300 rounded-b-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              style={{ 
+                whiteSpace: 'pre-wrap',
+                wordWrap: 'break-word'
+              }}
+              data-placeholder="Write your post description..."
+              suppressContentEditableWarning={true}
+            />
           </div>
 
           {/* Tags */}
