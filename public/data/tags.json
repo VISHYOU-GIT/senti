@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "education",
+    "color": "#3b82f6",
+    "postsCount": 45,
+    "likesCount": 1234,
+    "commentsCount": 567
+  },
+  {
+    "id": 2,
+    "name": "technology",
+    "color": "#10b981",
+    "postsCount": 38,
+    "likesCount": 987,
+    "commentsCount": 423
+  },
+  {
+    "id": 3,
+    "name": "policy",
+    "color": "#f59e0b",
+    "postsCount": 29,
+    "likesCount": 756,
+    "commentsCount": 345
+  },
+  {
+    "id": 4,
+    "name": "government",
+    "color": "#ef4444",
+    "postsCount": 33,
+    "likesCount": 892,
+    "commentsCount": 478
+  },
+  {
+    "id": 5,
+    "name": "climate",
+    "color": "#8b5cf6",
+    "postsCount": 24,
+    "likesCount": 645,
+    "commentsCount": 289
+  },
+  {
+    "id": 6,
+    "name": "healthcare",
+    "color": "#06b6d4",
+    "postsCount": 31,
+    "likesCount": 723,
+    "commentsCount": 356
+  },
+  {
+    "id": 7,
+    "name": "economy",
+    "color": "#f97316",
+    "postsCount": 27,
+    "likesCount": 578,
+    "commentsCount": 234
+  },
+  {
+    "id": 8,
+    "name": "environment",
+    "color": "#22c55e",
+    "postsCount": 19,
+    "likesCount": 423,
+    "commentsCount": 178
+  },
+  {
+    "id": 9,
+    "name": "sustainability",
+    "color": "#84cc16",
+    "postsCount": 15,
+    "likesCount": 312,
+    "commentsCount": 145
+  },
+  {
+    "id": 10,
+    "name": "digital",
+    "color": "#0ea5e9",
+    "postsCount": 22,
+    "likesCount": 567,
+    "commentsCount": 289
+  },
+  {
+    "id": 11,
+    "name": "india",
+    "color": "#f43f5e",
+    "postsCount": 41,
+    "likesCount": 998,
+    "commentsCount": 445
+  },
+  {
+    "id": 12,
+    "name": "public-health",
+    "color": "#14b8a6",
+    "postsCount": 18,
+    "likesCount": 389,
+    "commentsCount": 167
+  },
+  {
+    "id": 13,
+    "name": "finance",
+    "color": "#a855f7",
+    "postsCount": 25,
+    "likesCount": 634,
+    "commentsCount": 298
+  },
+  {
+    "id": 14,
+    "name": "recovery",
+    "color": "#64748b",
+    "postsCount": 12,
+    "likesCount": 245,
+    "commentsCount": 89
+  },
+  {
+    "id": 15,
+    "name": "innovation",
+    "color": "#f59e0b",
+    "postsCount": 17,
+    "likesCount": 378,
+    "commentsCount": 156
+  },
+  {
+    "id": 16,
+    "name": "research",
+    "color": "#6366f1",
+    "postsCount": 21,
+    "likesCount": 456,
+    "commentsCount": 203
+  },
+  {
+    "id": 17,
+    "name": "social",
+    "color": "#ec4899",
+    "postsCount": 28,
+    "likesCount": 689,
+    "commentsCount": 334
+  },
+  {
+    "id": 18,
+    "name": "development",
+    "color": "#059669",
+    "postsCount": 35,
+    "likesCount": 812,
+    "commentsCount": 389
+  }
+]

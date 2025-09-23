@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Success of N.E.P. in 2025",
+    "description": "The National Education Policy (NEP) 2020 shows early success through the restructuring of the curriculum to the 5+3+3+4 system, improved enrollment in early childhood education and skill development programs, a higher Gross Enrollment Ratio in higher education, and enhanced student engagement due to flexibility in the Academic Bank of Credits and multiple entry/exit options.",
+    "images": [
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop"
+    ],
+    "tags": ["education", "policy", "government"],
+    "userId": 1,
+    "likes": 205,
+    "views": 1240,
+    "comments": 123,
+    "isActive": true,
+    "createdAt": "2025-09-23T08:30:00Z",
+    "updatedAt": "2025-09-23T10:15:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Digital India Initiative Progress",
+    "description": "Comprehensive analysis of Digital India's impact on rural connectivity and digital literacy programs across various states.",
+    "images": [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop"
+    ],
+    "tags": ["technology", "digital", "india"],
+    "userId": 2,
+    "likes": 178,
+    "views": 892,
+    "comments": 67,
+    "isActive": true,
+    "createdAt": "2025-09-22T14:20:00Z",
+    "updatedAt": "2025-09-23T09:45:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Climate Change Adaptation Strategies",
+    "description": "Exploring innovative approaches to climate resilience in Indian agriculture and urban planning.",
+    "images": [
+      "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop"
+    ],
+    "tags": ["climate", "environment", "sustainability"],
+    "userId": 3,
+    "likes": 312,
+    "views": 1567,
+    "comments": 89,
+    "isActive": true,
+    "createdAt": "2025-09-21T11:45:00Z",
+    "updatedAt": "2025-09-23T08:30:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Healthcare Reforms Implementation",
+    "description": "Analysis of recent healthcare policy changes and their impact on public health infrastructure.",
+    "images": [
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
+    ],
+    "tags": ["healthcare", "policy", "public-health"],
+    "userId": 4,
+    "likes": 156,
+    "views": 743,
+    "comments": 45,
+    "isActive": true,
+    "createdAt": "2025-09-20T16:30:00Z",
+    "updatedAt": "2025-09-22T12:15:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Economic Recovery Post-Pandemic",
+    "description": "Examining India's economic recovery strategies and their effectiveness in various sectors.",
+    "images": [
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"
+    ],
+    "tags": ["economy", "recovery", "finance"],
+    "userId": 5,
+    "likes": 234,
+    "views": 1123,
+    "comments": 78,
+    "isActive": true,
+    "createdAt": "2025-09-19T09:15:00Z",
+    "updatedAt": "2025-09-23T07:20:00Z"
+  }
+]

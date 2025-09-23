@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "postId": 1,
+    "userId": 2,
+    "comment": "This is a great analysis of NEP implementation. The 5+3+3+4 system is indeed showing promising results.",
+    "likes": 15,
+    "sentiment": "positive",
+    "createdAt": "2025-09-23T09:30:00Z"
+  },
+  {
+    "id": 2,
+    "postId": 1,
+    "userId": 3,
+    "comment": "I think there are still some challenges in rural areas that need to be addressed more effectively.",
+    "likes": 8,
+    "sentiment": "neutral",
+    "createdAt": "2025-09-23T10:15:00Z"
+  },
+  {
+    "id": 3,
+    "postId": 1,
+    "userId": 4,
+    "comment": "The Academic Bank of Credits system is revolutionary! It's giving students so much flexibility.",
+    "likes": 23,
+    "sentiment": "positive",
+    "createdAt": "2025-09-23T11:00:00Z"
+  },
+  {
+    "id": 4,
+    "postId": 2,
+    "userId": 1,
+    "comment": "Digital literacy programs need more funding and better implementation strategies.",
+    "likes": 12,
+    "sentiment": "negative",
+    "createdAt": "2025-09-22T15:30:00Z"
+  },
+  {
+    "id": 5,
+    "postId": 3,
+    "userId": 5,
+    "comment": "Climate adaptation strategies should focus more on indigenous knowledge systems.",
+    "likes": 19,
+    "sentiment": "neutral",
+    "createdAt": "2025-09-21T14:45:00Z"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john@example.com",
+    "phone": "+91-9876543210",
+    "isOnline": true,
+    "registeredDate": "2025-09-23",
+    "lastActive": "2025-09-23T10:30:00Z",
+    "totalPosts": 15,
+    "totalLikes": 342
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane@example.com",
+    "phone": "+91-9876543211",
+    "isOnline": false,
+    "registeredDate": "2025-09-22",
+    "lastActive": "2025-09-22T18:45:00Z",
+    "totalPosts": 8,
+    "totalLikes": 156
+  },
+  {
+    "id": 3,
+    "username": "mike_wilson",
+    "email": "mike@example.com",
+    "phone": "+91-9876543212",
+    "isOnline": true,
+    "registeredDate": "2025-09-21",
+    "lastActive": "2025-09-23T09:15:00Z",
+    "totalPosts": 22,
+    "totalLikes": 487
+  },
+  {
+    "id": 4,
+    "username": "sarah_johnson",
+    "email": "sarah@example.com",
+    "phone": "+91-9876543213",
+    "isOnline": false,
+    "registeredDate": "2025-09-20",
+    "lastActive": "2025-09-23T07:22:00Z",
+    "totalPosts": 12,
+    "totalLikes": 289
+  },
+  {
+    "id": 5,
+    "username": "alex_brown",
+    "email": "alex@example.com",
+    "phone": "+91-9876543214",
+    "isOnline": true,
+    "registeredDate": "2025-09-23",
+    "lastActive": "2025-09-23T11:00:00Z",
+    "totalPosts": 5,
+    "totalLikes": 78
+  }
+]
