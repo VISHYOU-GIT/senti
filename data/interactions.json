@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "state": "Maharashtra",
+    "dailyAvg": 1245,
+    "weeklyAvg": 8715,
+    "monthlyAvg": 37420,
+    "todayInteractions": 1567
+  },
+  {
+    "id": 2,
+    "state": "Karnataka",
+    "dailyAvg": 987,
+    "weeklyAvg": 6909,
+    "monthlyAvg": 29637,
+    "todayInteractions": 1123
+  },
+  {
+    "id": 3,
+    "state": "Tamil Nadu",
+    "dailyAvg": 1089,
+    "weeklyAvg": 7623,
+    "monthlyAvg": 32697,
+    "todayInteractions": 1289
+  },
+  {
+    "id": 4,
+    "state": "Gujarat",
+    "dailyAvg": 756,
+    "weeklyAvg": 5292,
+    "monthlyAvg": 22692,
+    "todayInteractions": 834
+  },
+  {
+    "id": 5,
+    "state": "West Bengal",
+    "dailyAvg": 845,
+    "weeklyAvg": 5915,
+    "monthlyAvg": 25365,
+    "todayInteractions": 967
+  },
+  {
+    "id": 6,
+    "state": "Rajasthan",
+    "dailyAvg": 678,
+    "weeklyAvg": 4746,
+    "monthlyAvg": 20358,
+    "todayInteractions": 723
+  },
+  {
+    "id": 7,
+    "state": "Uttar Pradesh",
+    "dailyAvg": 1456,
+    "weeklyAvg": 10192,
+    "monthlyAvg": 43728,
+    "todayInteractions": 1678
+  }
+]
