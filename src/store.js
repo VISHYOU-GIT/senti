@@ -1,36 +1,74 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-const useStore = create((set, get) => ({
-  // Auth state
-  user: null,
-  isAuthenticated: false,
-  isLoading: false,
+// Helper functions for manual localStorage backup
+const getStoredAuth = () => {
+  try {
+    const stored = localStorage.getItem('senti-auth');
+    return stored ? JSON.parse(stored) : null;
+  } catch {
+    return null;
+  }
+};
 
-  // Data state
-  users: [],
-  posts: [],
-  tags: [],
-  interactions: [],
-  comments: [],
+const setStoredAuth = (user, isAuthenticated) => {
+  try {
+    localStorage.setItem('senti-auth', JSON.stringify({ user, isAuthenticated }));
+  } catch (error) {
+    console.warn('Failed to store auth data:', error);
+  }
+};
 
-  // UI state
-  sidebarCollapsed: false,
-  currentPage: 'dashboard',
+const clearStoredAuth = () => {
+  try {
+    localStorage.removeItem('senti-auth');
+  } catch (error) {
+    console.warn('Failed to clear auth data:', error);
+  }
+};
 
-  // Actions
-  login: (userData) => set({ user: userData, isAuthenticated: true }),
-  logout: () => set({ user: null, isAuthenticated: false }),
-  setLoading: (loading) => set({ isLoading: loading }),
-  
-  toggleSidebar: () => set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
-  setCurrentPage: (page) => set({ currentPage: page }),
+// Initialize auth state from localStorage
+const storedAuth = getStoredAuth();
 
-  // Data actions
-  setUsers: (users) => set({ users }),
-  setPosts: (posts) => set({ posts }),
-  setTags: (tags) => set({ tags }),
-  setInteractions: (interactions) => set({ interactions }),
-  setComments: (comments) => set({ comments }),
+const useStore = create(
+  persist(
+    (set, get) => ({
+      // Auth state - Initialize from localStorage
+      user: storedAuth?.user || null,
+      isAuthenticated: storedAuth?.isAuthenticated || false,
+      isLoading: false,
+
+      // Data state
+      users: [],
+      posts: [],
+      tags: [],
+      interactions: [],
+      comments: [],
+
+      // UI state
+      sidebarCollapsed: false,
+      currentPage: 'dashboard',
+
+      // Actions
+      login: (userData) => {
+        set({ user: userData, isAuthenticated: true });
+        setStoredAuth(userData, true);
+      },
+      logout: () => {
+        set({ user: null, isAuthenticated: false });
+        clearStoredAuth();
+      },
+      setLoading: (loading) => set({ isLoading: loading }),
+      
+      toggleSidebar: () => set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
+      setCurrentPage: (page) => set({ currentPage: page }),
+
+      // Data actions
+      setUsers: (users) => set({ users }),
+      setPosts: (posts) => set({ posts }),
+      setTags: (tags) => set({ tags }),
+      setInteractions: (interactions) => set({ interactions }),
+      setComments: (comments) => set({ comments }),
 
   // Fetch data
   fetchData: async (endpoint) => {
@@ -89,6 +127,16 @@ const useStore = create((set, get) => ({
       totalPosts: posts.length
     };
   }
-}));
+}),
+{
+  name: 'senti-storage', // unique name
+  // Only persist auth state and UI preferences
+  partialize: (state) => ({
+    user: state.user,
+    isAuthenticated: state.isAuthenticated,
+    sidebarCollapsed: state.sidebarCollapsed
+  })
+}
+));
 
 export default useStore;

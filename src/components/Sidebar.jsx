@@ -7,7 +7,8 @@ import {
   FiMessageSquare, 
   FiMenu,
   FiLogOut,
-  FiUser
+  FiUser,
+  FiUsers
 } from 'react-icons/fi';
 import useStore from '../store';
 import clsx from 'clsx';
@@ -20,6 +21,7 @@ export default function Sidebar() {
     { name: 'Dashboard', href: '/dashboard', icon: FiHome },
     { name: 'Compose', href: '/compose', icon: FiEdit3 },
     { name: 'Posts', href: '/posts', icon: FiFileText },
+    { name: 'Users', href: '/users', icon: FiUsers },
     { name: 'Feedbacks', href: '/feedbacks', icon: FiMessageSquare },
   ];
 

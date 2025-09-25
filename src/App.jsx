@@ -9,6 +9,8 @@ import Dashboard from './pages/Dashboard';
 import Compose from './pages/Compose';
 import Posts from './pages/Posts';
 import Feedbacks from './pages/Feedbacks';
+import Users from './pages/Users';
+import UserDetail from './pages/UserDetail';
 
 import Sidebar from './components/Sidebar';
 import Breadcrumbs from './components/Breadcrumbs';
@@ -36,6 +38,8 @@ function AdminRoutes() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/compose" element={<Compose />} />
       <Route path="/posts" element={<Posts />} />
+      <Route path="/users" element={<Users />} />
+      <Route path="/users/:userId" element={<UserDetail />} />
       <Route path="/feedbacks" element={<Feedbacks />} />
       <Route path="/login" element={<Navigate to="/dashboard" />} />
       <Route path="/register" element={<Navigate to="/dashboard" />} />
