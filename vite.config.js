@@ -4,9 +4,10 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/senti/',
+  base: process.env.NODE_ENV === 'production' ? '/senti/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: false,
   },
 })
