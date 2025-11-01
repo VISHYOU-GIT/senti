@@ -33,9 +33,14 @@ const storedAuth = getStoredAuth();
 const useStore = create(
   persist(
     (set, get) => ({
-      // Auth state - Initialize from localStorage
+      // Admin Auth state - Initialize from localStorage
       user: storedAuth?.user || null,
       isAuthenticated: storedAuth?.isAuthenticated || false,
+      
+      // User Auth state (for user-facing pages)
+      userInfo: null,
+      isUserAuthenticated: false,
+      
       isLoading: false,
 
       // Data state
@@ -49,7 +54,7 @@ const useStore = create(
       sidebarCollapsed: false,
       currentPage: 'dashboard',
 
-      // Actions
+      // Admin Actions
       login: (userData) => {
         set({ user: userData, isAuthenticated: true });
         setStoredAuth(userData, true);
@@ -58,6 +63,15 @@ const useStore = create(
         set({ user: null, isAuthenticated: false });
         clearStoredAuth();
       },
+      
+      // User Actions
+      userLogin: (userData) => {
+        set({ userInfo: userData, isUserAuthenticated: true });
+      },
+      userLogout: () => {
+        set({ userInfo: null, isUserAuthenticated: false });
+      },
+      
       setLoading: (loading) => set({ isLoading: loading }),
       
       toggleSidebar: () => set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
@@ -134,6 +148,8 @@ const useStore = create(
   partialize: (state) => ({
     user: state.user,
     isAuthenticated: state.isAuthenticated,
+    userInfo: state.userInfo,
+    isUserAuthenticated: state.isUserAuthenticated,
     sidebarCollapsed: state.sidebarCollapsed
   })
 }

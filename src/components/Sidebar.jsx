@@ -18,11 +18,11 @@ export default function Sidebar() {
   const { sidebarCollapsed, toggleSidebar, user, logout } = useStore();
 
   const navigation = [
-    { name: 'Dashboard', href: '/dashboard', icon: FiHome },
-    { name: 'Compose', href: '/compose', icon: FiEdit3 },
-    { name: 'Posts', href: '/posts', icon: FiFileText },
-    { name: 'Users', href: '/users', icon: FiUsers },
-    { name: 'Feedbacks', href: '/feedbacks', icon: FiMessageSquare },
+    { name: 'Dashboard', href: '/admin/dashboard', icon: FiHome },
+    { name: 'Compose', href: '/admin/compose', icon: FiEdit3 },
+    { name: 'Posts', href: '/admin/posts', icon: FiFileText },
+    { name: 'Users', href: '/admin/users', icon: FiUsers },
+    { name: 'Feedbacks', href: '/admin/feedbacks', icon: FiMessageSquare },
   ];
 
   const handleLogout = () => {

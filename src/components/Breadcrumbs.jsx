@@ -7,9 +7,11 @@ export default function Breadcrumbs() {
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   const breadcrumbNameMap = {
+    admin: 'Admin',
     dashboard: 'Dashboard',
     compose: 'Compose',
     posts: 'Posts',
+    users: 'Users',
     feedbacks: 'Feedbacks',
     login: 'Login',
     register: 'Register'
@@ -17,7 +19,7 @@ export default function Breadcrumbs() {
 
   return (
     <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-      <Link to="/dashboard" className="flex items-center hover:text-gray-900">
+      <Link to="/admin/dashboard" className="flex items-center hover:text-gray-900">
         <FiHome className="w-4 h-4" />
       </Link>
       
